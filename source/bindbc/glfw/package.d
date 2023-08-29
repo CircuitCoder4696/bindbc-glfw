@@ -13,4 +13,9 @@ static if(staticBinding){
 	public import bindbc.glfw.bindstatic;
 }else{
 	public import bindbc.glfw.binddynamic;
-}
+};
+
+public GLFWSupport glfw;   //   This is to allow code to be more like the documented examples for GLFW.
+static this() {
+    glfw= loadGLFW();
+};
